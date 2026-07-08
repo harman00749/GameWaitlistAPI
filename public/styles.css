@@ -1,0 +1,327 @@
+:root {
+  --color-bg: #e9ecef;
+  --color-surface: #ffffff;
+  --color-text: #141414;
+  --color-muted: #5c6268;
+  --color-border: #c9ced3;
+  --color-strong: #181818;
+  --color-soft: #f1f3f5;
+  --color-error: #b00020;
+  --color-header: #202327;
+  --color-header-muted: #d7dbe0;
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 32px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: 1px solid var(--color-strong);
+  border-radius: 4px;
+  background: var(--color-strong);
+  color: var(--color-surface);
+  cursor: pointer;
+  min-height: 44px;
+  padding: 0 var(--space-2);
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-text);
+  outline-offset: 2px;
+}
+
+button:hover {
+  background: var(--color-text);
+}
+
+.secondary-button {
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.site-header {
+  border-bottom: 1px solid var(--color-border);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.07), transparent 34%),
+    var(--color-header);
+  color: var(--color-surface);
+  padding: var(--space-3);
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1;
+}
+
+.lede {
+  max-width: 760px;
+  margin: var(--space-2) 0 0;
+  color: var(--color-header-muted);
+  line-height: 1.6;
+}
+
+.eyebrow {
+  margin: 0 0 var(--space-1);
+  color: var(--color-header-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 420px) minmax(0, 1fr);
+  gap: var(--space-3);
+  padding: var(--space-3);
+}
+
+.panel {
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-surface);
+  box-shadow: 0 20px 60px rgba(20, 20, 20, 0.08);
+  padding: var(--space-3);
+}
+
+.panel h2 {
+  margin: 0 0 var(--space-2);
+}
+
+.field {
+  display: grid;
+  gap: var(--space-1);
+  margin-bottom: var(--space-2);
+}
+
+.field-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+}
+
+label {
+  font-weight: 700;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: #fbfbfb;
+  color: var(--color-text);
+  min-height: 44px;
+  padding: 10px 12px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.field-error {
+  min-height: 18px;
+  margin: 0;
+  color: var(--color-error);
+  font-size: 0.9rem;
+}
+
+.is-invalid {
+  border-color: var(--color-error);
+}
+
+.actions,
+.search-row,
+.entry-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.list-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.list-header p {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.search-row {
+  min-width: min(100%, 420px);
+}
+
+.search-row input {
+  flex: 1 1 220px;
+}
+
+.entries {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.entry-card,
+.empty-state,
+.loading,
+.message {
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-soft);
+  padding: var(--space-2);
+}
+
+.entry-card {
+  display: grid;
+  gap: var(--space-2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75);
+}
+
+.game-cover {
+  display: grid;
+  min-height: 120px;
+  place-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background:
+    linear-gradient(135deg, var(--color-soft) 25%, transparent 25%) 0 0 / 32px 32px,
+    linear-gradient(315deg, var(--color-soft) 25%, transparent 25%) 0 0 / 32px 32px,
+    var(--color-surface);
+  color: var(--color-text);
+}
+
+.game-poster {
+  width: 100%;
+  height: 220px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-soft);
+  object-fit: cover;
+}
+
+.game-cover span {
+  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.92);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: var(--space-1) var(--space-2);
+  text-transform: uppercase;
+}
+
+.game-cover-diagonal {
+  background:
+    repeating-linear-gradient(135deg, var(--color-surface) 0 18px, var(--color-soft) 18px 36px);
+}
+
+.game-cover-field {
+  background:
+    linear-gradient(90deg, transparent 49%, var(--color-border) 49% 51%, transparent 51%),
+    repeating-linear-gradient(0deg, var(--color-surface) 0 24px, var(--color-soft) 24px 48px);
+}
+
+.game-cover-track {
+  background:
+    radial-gradient(circle at center, var(--color-surface) 0 32px, transparent 33px),
+    repeating-radial-gradient(circle at center, var(--color-soft) 0 12px, var(--color-surface) 12px 24px);
+}
+
+.game-cover-grid,
+.game-cover-blocks {
+  background:
+    linear-gradient(var(--color-border) 1px, transparent 1px) 0 0 / 24px 24px,
+    linear-gradient(90deg, var(--color-border) 1px, transparent 1px) 0 0 / 24px 24px,
+    var(--color-surface);
+}
+
+.game-cover-scope {
+  background:
+    radial-gradient(circle at center, transparent 0 28px, var(--color-border) 29px 31px, transparent 32px),
+    linear-gradient(90deg, transparent 49%, var(--color-border) 49% 51%, transparent 51%),
+    linear-gradient(0deg, transparent 49%, var(--color-border) 49% 51%, transparent 51%),
+    var(--color-surface);
+}
+
+.entry-card h3 {
+  margin: 0;
+}
+
+.entry-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  color: var(--color-muted);
+}
+
+.entry-meta span {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  padding: 4px 8px;
+}
+
+.loading {
+  margin-bottom: var(--space-2);
+}
+
+.message {
+  margin-bottom: var(--space-2);
+}
+
+.message:empty {
+  display: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .list-header {
+    display: grid;
+  }
+}
+
+@media (max-width: 560px) {
+  .site-header,
+  .layout,
+  .panel {
+    padding: var(--space-2);
+  }
+
+  .field-grid {
+    grid-template-columns: 1fr;
+  }
+}
